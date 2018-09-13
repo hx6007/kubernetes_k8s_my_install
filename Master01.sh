@@ -29,6 +29,7 @@ MASTER_URL="k8s-api.virtual.local"
 EOF
 chmod +x env.sh
 echo "192.168.224.181 k8s-api.virtual.local k8s-api" >>  /etc/hosts
+source /etc/profile.d/k8s.sh
 
 cd /usr/local/src
 yum -y install wget  
