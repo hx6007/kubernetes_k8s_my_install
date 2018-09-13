@@ -85,6 +85,26 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
 
 
 
+5、Master01上，将本地电脑的etcd-3.3.9.tar.gz上传
+
+ cd /usr/local/src
+
+ rz -E
+
+  tar xvf etcd-v3.3.9-linux-amd64.tar.gz
+
+ sudo cp -v etcd-v3.3.9-linux-amd64/etcdctl /usr/k8s/bin/
+
+ scp etcd-v3.3.9-linux-amd64/etcdctl root@192.168.224.182:/usr/k8s/bin/
+
+ scp etcd-v3.3.9-linux-amd64/etcdctl root@192.168.224.183:/usr/k8s/bin/
+
+ scp etcd-v3.3.9-linux-amd64/etcdctl root@192.168.224.184:/usr/k8s/bin/
+
+ scp etcd-v3.3.9-linux-amd64/etcdctl root@192.168.224.185:/usr/k8s/bin/
+
+
+
 
 
 
