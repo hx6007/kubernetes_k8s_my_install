@@ -13,6 +13,7 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
    ssh-copy-id -i id_rsa.pub root@192.168.224.184
 
    ssh-copy-id -i id_rsa.pub root@192.168.224.185
+   
 
 2、在Node1上建立与其他服务器的ssh互连
 
@@ -25,6 +26,7 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
    ssh-copy-id -i id_rsa.pub root@192.168.224.184
 
    ssh-copy-id -i id_rsa.pub root@192.168.224.185
+   
 
 3、所有都创建目录
 
@@ -53,7 +55,6 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
 
  sudo chmod a+x /usr/k8s/bin/kube*
 
- source /etc/profile.d/k8s.sh
 
  scp /usr/k8s/bin/kubectl root@192.168.224.182:/usr/k8s/bin/
 
@@ -63,8 +64,6 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
 
  scp /usr/k8s/bin/kubectl root@192.168.224.185:/usr/k8s/bin/
 
- cp -rv kubernetes/server/bin/{kube-apiserver,kube-controller-manager,kube-scheduler} /usr/k8s/bin/
-
  scp -rv kubernetes/server/bin/{kube-apiserver,kube-controller-manager,kube-scheduler} root@192.168.224.182:/usr/k8s/bin/
 
 
@@ -73,6 +72,8 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.183:/usr/k8s
 scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.184:/usr/k8s/bin/
 
 scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s/bin/
+
+
 
 
 
