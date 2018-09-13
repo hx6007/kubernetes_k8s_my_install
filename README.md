@@ -84,7 +84,7 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
 
 
 
-5、Master01上，将本地电脑的etcd-3.3.9.tar.gz上传
+6、Master01上，将本地电脑的etcd-3.3.9.tar.gz上传
 
  cd /usr/local/src
 
@@ -104,7 +104,7 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
 
 
 
-5、Master01上，将本地电脑的 cfssl_linux-amd64  cfssl-certinfo_linux-amd64  cfssljson_linux-amd64 上传
+7、Master01上，将本地电脑的 cfssl_linux-amd64  cfssl-certinfo_linux-amd64  cfssljson_linux-amd64 上传
 
 
  chmod +x cfssl_linux-amd64
@@ -120,10 +120,15 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
  sudo mv cfssl-certinfo_linux-amd64 /usr/k8s/bin/cfssl-certinfo
  
  
+scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.182:/usr/k8s/bin/
+
+scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.183:/usr/k8s/bin/
 
 
 
-6、Node01上，将本地电脑的flannel-v0.10.0-linux-amd64.tar.gz上传到
+
+
+8、Node01上，将本地电脑的flannel-v0.10.0-linux-amd64.tar.gz上传到
 
  cd /usr/local/src && mkdir flannel
 
@@ -139,7 +144,7 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
 
 
 
-7其他：
+9其他：
 
 
 8.7、验证 master 节点
