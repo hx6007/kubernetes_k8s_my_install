@@ -44,13 +44,13 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
 
 git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
 
- scp kubernetes_k8s_my_install root@192.168.224.182:/usr/local/src
+ scp -r kubernetes_k8s_my_install root@192.168.224.182:/usr/local/src
 
- scp kubernetes_k8s_my_install root@192.168.224.183:/usr/local/src
+ scp  -r kubernetes_k8s_my_install root@192.168.224.183:/usr/local/src
 
- scp kubernetes_k8s_my_install root@192.168.224.184:/usr/local/src
+ scp  -r kubernetes_k8s_my_install root@192.168.224.184:/usr/local/src
 
- scp kubernetes_k8s_my_install root@192.168.224.185:/usr/local/src
+ scp  -r kubernetes_k8s_my_install root@192.168.224.185:/usr/local/src
 
 
 5、Master01上，将本地电脑的kubernetes-server-linux-amd64.tar.gz上传
