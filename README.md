@@ -40,10 +40,20 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
 
  mkdir /data/k8s/kubedns -pv
 
+4、Master01上，下载代码、并分发到其他节点
+
+git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
+
+ scp kubernetes_k8s_my_install root@192.168.224.182:/usr/local/src
+
+ scp kubernetes_k8s_my_install root@192.168.224.183:/usr/local/src
+
+ scp kubernetes_k8s_my_install root@192.168.224.184:/usr/local/src
+
+ scp kubernetes_k8s_my_install root@192.168.224.185:/usr/local/src
 
 
-
-4、Master01上，将本地电脑的kubernetes-server-linux-amd64.tar.gz上传
+5、Master01上，将本地电脑的kubernetes-server-linux-amd64.tar.gz上传
 
  cd /usr/local/src
 
@@ -79,7 +89,7 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
 
 
 
-5、Node01上，将本地电脑的flannel-v0.10.0-linux-amd64.tar.gz上传到
+6、Node01上，将本地电脑的flannel-v0.10.0-linux-amd64.tar.gz上传到
 
  cd /usr/local/src && mkdir flannel
 
@@ -95,10 +105,10 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
 
 
 
-6其他：
+7其他：
 
 
-7.7、验证 master 节点
+8.7、验证 master 节点
 
 $ kubectl get componentstatuses
 
