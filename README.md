@@ -1,6 +1,4 @@
 
-git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
-
 
 1、在Master01上必须要和其他服务器ssh互连
 
@@ -14,6 +12,8 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
 
    ssh-copy-id -i id_rsa.pub root@192.168.224.185
    
+.
+
 
 2、在Node1上建立与其他服务器的ssh互连
 
@@ -27,6 +27,15 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
 
    ssh-copy-id -i id_rsa.pub root@192.168.224.185
    
+  
+. 
+.
+
+  
+.
+
+
+
 
 3、所有都创建目录
 
@@ -39,6 +48,15 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
  mkdir -pv /etc/flanneld/ssl
 
  mkdir /data/k8s/kubedns -pv
+  
+.
+ 
+.
+
+  
+.
+
+
 
 4、Master01上，下载代码、并分发到其他节点
 
@@ -52,6 +70,15 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
 
  scp  -r kubernetes_k8s_my_install root@192.168.224.185:/usr/local/src
 
+  
+.
+ 
+.
+
+  
+.
+
+
 
 5、Master01上，将本地电脑的kubernetes-server-linux-amd64.tar.gz上传
 
@@ -62,7 +89,6 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
  tar xvf  kubernetes-server-linux-amd64.tar.gz /usr/k8s/bin/
 
 cp -v kubernetes/server/bin/{kubeadm,kube-apiserver,kube-controller-manager,kubectl,kubelet,kube-proxy,kube-scheduler} /usr/k8s/bin/
-
 
 
  scp /usr/k8s/bin/kubectl root@192.168.224.182:/usr/k8s/bin/
@@ -81,6 +107,15 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.183:/usr/k8s
 scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.184:/usr/k8s/bin/
 
 scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s/bin/
+
+  
+.
+ 
+.
+
+  
+.
+
 
 
 
@@ -101,6 +136,15 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
  scp etcd-v3.3.9-linux-amd64/etcdctl root@192.168.224.184:/usr/k8s/bin/
 
  scp etcd-v3.3.9-linux-amd64/etcdctl root@192.168.224.185:/usr/k8s/bin/
+
+  
+.
+ 
+.
+
+  
+.
+
 
 
 
@@ -125,6 +169,18 @@ scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.182:/usr/k8s
 scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.183:/usr/k8s/bin/
 
 
+  
+.
+
+  
+.
+ 
+.
+
+  
+.
+
+
 
 
 
@@ -142,6 +198,12 @@ scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.183:/usr/k8s
 
  scp flannel/{flanneld,mk-docker-opts.sh} root@192.168.224.185:/usr/k8s/bin
 
+  
+.
+
+  
+.
+
 
 
 9其他：
@@ -154,9 +216,21 @@ $ kubectl get componentstatuses
 
 然后我们可以通过上面9000端口监控我们的haproxy的运行状态(192.168.224.181:9000/stats):
 
+  
+.
+
+  
+.
+
 
 # 查看日志
 journalctl -f -u keepalived
+
+  
+.
+
+  
+.
 
 
 验证虚拟IP
@@ -166,6 +240,12 @@ journalctl -f -u keepalived
 # 使用ifconfig -a 命令查看不到，要使用ip addr
 
 [root@k8s-master01 keepalived]# ip addr
+
+ 
+.
+
+  
+.
 
 
 验证集群状态
@@ -183,6 +263,12 @@ $ systemctl stop kube-apiserver
 [root@k8s-master02 ~]# kubectl get cs
 
 
+ 
+.
+
+  
+.
+
 
 
 每台node节点检查文件系统的类型，默认docker的存储驱动是 devicemaper 如果要使用overlay2 需要 xfs 文件系统的 ftype=1 才可以使用，如果不是，参考总教程：https://github.com/hx6007/Kubernetes-my-study/blob/master/install_ok(2master%2B3node)
@@ -190,6 +276,12 @@ $ systemctl stop kube-apiserver
 检查命令如下：
 
  xfs_info /var/
+
+ 
+.
+
+  
+.
 
 
 
@@ -201,6 +293,11 @@ $ systemctl stop kube-apiserver
 
 
 
+ 
+.
+
+  
+.
 
 
 
@@ -221,6 +318,12 @@ No resources found.
 
 for i in `kubectl get csr|awk '{print $1}'|grep -v "NAME"`;do kubectl certificate approve $i;done
 
+ 
+.
+
+  
+.
+
 
 # 查看 Node 节点
 
@@ -234,6 +337,12 @@ NAME           STATUS    ROLES     AGE       VERSION
 
 192.168.224.185   Ready     <none>    2m        v1.9.7
 
+
+ 
+.
+
+  
+.
 
 
 master01上
@@ -259,6 +368,12 @@ kubernetes   ClusterIP   10.254.0.1       <none>        443/TCP        2h
 nginx-ds     NodePort    10.254.136.253   <none>        80:32766/TCP   3m
 
 
+ 
+.
+
+  
+.
+
 
 在所有 Node 上执行：
 
@@ -282,6 +397,12 @@ search default.svc.cluster.local. svc.cluster.local. cluster.local.
 options ndots:5
 
 
+ 
+.
+
+  
+.
+
 
 
 
@@ -297,6 +418,12 @@ PING kubernetes.default.svc.cluster.local (10.254.0.1): 48 data bytes
 
 
 
+
+ 
+.
+
+  
+.
 
 
 
@@ -333,6 +460,12 @@ kubernetes-dashboard 服务暴露了 NodePort，可以使用 http://NodeIP:nodeP
 
 由于缺少 Heapster 插件，当前 dashboard 不能展示 Pod、Nodes 的 CPU、内存等 metric 图形。
 
+
+ 
+.
+
+  
+.
 
 
 
