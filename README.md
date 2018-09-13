@@ -6,25 +6,25 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
 
    cd /root/.ssh/
 
-   ssh-copy-id -i id_rsa.pubroot@192.168.224.182
+   ssh-copy-id -i id_rsa.pub root@192.168.224.182
 
-   ssh-copy-id -i id_rsa.pubroot@192.168.224.183
+   ssh-copy-id -i id_rsa.pub root@192.168.224.183
 
-   ssh-copy-id -i id_rsa.pubroot@192.168.224.184
+   ssh-copy-id -i id_rsa.pub root@192.168.224.184
 
-   ssh-copy-id -i id_rsa.pubroot@192.168.224.185
+   ssh-copy-id -i id_rsa.pub root@192.168.224.185
 
 2、在Node1上建立与其他服务器的ssh互连
 
    cd /root/.ssh/
 
-   ssh-copy-id -i id_rsa.pubroot@192.168.224.181
+   ssh-copy-id -i id_rsa.pub root@192.168.224.181
 
-   ssh-copy-id -i id_rsa.pubroot@192.168.224.182
+   ssh-copy-id -i id_rsa.pub root@192.168.224.182
 
-   ssh-copy-id -i id_rsa.pubroot@192.168.224.184
+   ssh-copy-id -i id_rsa.pub root@192.168.224.184
 
-   ssh-copy-id -i id_rsa.pubroot@192.168.224.185
+   ssh-copy-id -i id_rsa.pub root@192.168.224.185
 
 3、所有都创建目录
 
