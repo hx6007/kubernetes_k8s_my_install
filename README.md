@@ -63,7 +63,6 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
 
 cp -v kubernetes/server/bin/{kubeadm,kube-apiserver,kube-controller-manager,kubectl,kubelet,kube-proxy,kube-scheduler} /usr/k8s/bin/
 
- sudo chmod a+x /usr/k8s/bin/kube*
 
 
  scp /usr/k8s/bin/kubectl root@192.168.224.182:/usr/k8s/bin/
