@@ -104,7 +104,19 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
 
 
 
+5、Master01上，将本地电脑的 cfssl_linux-amd64  cfssl-certinfo_linux-amd64  cfssljson_linux-amd64 上传
 
+
+ chmod +x cfssl_linux-amd64
+ sudo mv cfssl_linux-amd64 /usr/k8s/bin/cfssl
+ 
+ chmod +x cfssljson_linux-amd64
+ sudo mv cfssljson_linux-amd64 /usr/k8s/bin/cfssljson
+
+ chmod +x cfssl-certinfo_linux-amd64
+ sudo mv cfssl-certinfo_linux-amd64 /usr/k8s/bin/cfssl-certinfo
+ 
+ 
 
 
 
