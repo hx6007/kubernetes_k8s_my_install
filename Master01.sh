@@ -126,16 +126,6 @@ EOF
 
 
 
- 
-cd /usr/local/src/
- wget https://github.com/etcd-io/etcd/releases/download/v3.3.9/etcd-v3.3.9-linux-amd64.tar.gz
- tar -xvf etcd-v3.3.9-linux-amd64.tar.gz
- sudo mv etcd-v3.3.9-linux-amd64/etcd* /usr/k8s/bin/
- 
-
-
-
-
  sudo mkdir -pv /etc/etcd/ssl
  cd  /etc/etcd/ssl
 cat > etcd-csr.json <<EOF
