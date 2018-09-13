@@ -1,4 +1,7 @@
 
+git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
+
+
 1、在Master01上必须要和其他服务器ssh互连
 
    cd /root/.ssh/
