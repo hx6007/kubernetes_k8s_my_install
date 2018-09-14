@@ -86,7 +86,7 @@ git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
 
  rz -E
 
- tar xvf  kubernetes-server-linux-amd64.tar.gz /usr/k8s/bin/
+ tar xvf  kubernetes-server-linux-amd64.tar.gz 
 
 cp -v kubernetes/server/bin/{kubeadm,kube-apiserver,kube-controller-manager,kubectl,kubelet,kube-proxy,kube-scheduler} /usr/k8s/bin/
 
