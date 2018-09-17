@@ -1589,8 +1589,6 @@ Master02 配置文件
 
 mv /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.bak
 cat << EOF > /etc/keepalived/keepalived.conf
-
-cat << EOF > /etc/keepalived/keepalived.conf
 ! Configuration File for keepalived
 
 global_defs {
