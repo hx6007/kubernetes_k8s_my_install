@@ -2938,6 +2938,11 @@ heapster-rbac.yaml
 
 修改 influxdb.yaml、grafana.yaml、heapster.yaml的 image 镜像地址
  
+注意：因实际操作中无法docker pull heapster-amd64镜像，所以从本机搜索heapster-amd64.tar，上传到三个节点，然后执行下面命令
+
+docker load < heapster-amd64.tar
+
+docker tag gcr.io/google_containers/heapster-amd64:v1.4.2 index.tenxcloud.com/jimmy/heapster-amd64:v1.3.0-beta.1
  
  
 sed -i 's@gcr.io/google_containers/heapster-grafana-amd64:v4.2.0@index.tenxcloud.com/jimmy/heapster-grafana-amd64:v4.0.2@' influxdb/grafana.yaml
