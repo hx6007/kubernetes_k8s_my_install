@@ -3012,7 +3012,7 @@ EOF
  kubectl create -f namespace.yaml 
 
 
-13.2、创建 rbac.yaml
+## 13.2、创建 rbac.yaml
 
 cat > rbac.yaml <<EOF
 apiVersion: v1
@@ -3153,7 +3153,7 @@ EOF
 
 
 
-13.3、创建 deployment.yaml
+## 13.3、创建 deployment.yaml
 
 cat > deployment.yaml <<EOF
 apiVersion: extensions/v1beta1
@@ -3223,7 +3223,7 @@ EOF
 
 
 
-13.4、创建 default-backend.yaml
+## 13.4、创建 default-backend.yaml
 
 cat > default-backend.yaml <<EOF
 apiVersion: extensions/v1beta1
@@ -3283,7 +3283,7 @@ EOF
 
 
 
-13.5、创建 tcp-services-configmap.yaml
+## 13.5、创建 tcp-services-configmap.yaml
 
 cat > tcp-services-configmap.yaml <<EOF
 kind: ConfigMap
