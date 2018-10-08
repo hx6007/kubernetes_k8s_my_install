@@ -175,7 +175,6 @@ scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.185:/usr/k8s
 
  sudo cp flannel/{flanneld,mk-docker-opts.sh} /usr/k8s/bin
  
- scp flannel/{flanneld,mk-docker-opts.sh} root@192.168.224.183:/usr/k8s/bin
 
  scp flannel/{flanneld,mk-docker-opts.sh} root@192.168.224.184:/usr/k8s/bin
 
