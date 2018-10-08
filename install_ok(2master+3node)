@@ -103,6 +103,8 @@ source  /etc/profile
 
 为了方便，将/usr/k8s/bin设置成环境变量，为了重启也有效，可以将上面的export PATH=/usr/k8s/bin:$PATH添加到/etc/profile.d/k8s.sh文件中。
 
+以下操作在三台etcd服务器上运行
+
 echo "export PATH=/usr/k8s/bin:\$PATH" > /etc/profile.d/k8s.sh
 source /etc/profile.d/k8s.sh
 
