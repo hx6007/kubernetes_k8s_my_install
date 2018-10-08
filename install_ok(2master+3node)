@@ -1450,7 +1450,7 @@ systemctl status haproxy
 
 
 
-然后我们可以通过上面9000端口监控我们的haproxy的运行状态(192.168.224.181:9000/stats):
+然后我们可以通过上面9000端口监控我们的haproxy的运行状态(192.168.224.181:9000/stats): Admin:Password   #登陆需要账号密码
  
 问题
 上面我们的 haproxy 的确可以代理我们的两个 master 上的 apiserver 了，但是还不是高可用的，如果 master01 这个节点 down 掉了，那么我们haproxy 就不能正常提供服务了。这里我们可以使用两种方法来实现高可用
