@@ -52,9 +52,11 @@
 .
  
 
+ Master01 和 Node1 安装lrzsz
+
+yum -y install lrzsz
+
 .
-
-
 
 4、Master01上，将本地电脑的kubernetes-server-linux-amd64.tar.gz上传
 
@@ -85,9 +87,7 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.184:/usr/k8s
 scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s/bin/
 
   
-. Master01 和 Node1 安装lrzsz
 
-yum -y install lrzsz
 .
 
   
