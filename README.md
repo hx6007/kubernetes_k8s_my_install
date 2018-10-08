@@ -51,36 +51,12 @@
   
 .
  
-.
 
-  
-.
-
-
-
-4、Master01上，下载代码、并分发到其他节点
-
-git clone git@github.com:hx6007/kubernetes_k8s_my_install.git
-
- scp -r kubernetes_k8s_my_install root@192.168.224.182:/usr/local/src
-
- scp  -r kubernetes_k8s_my_install root@192.168.224.183:/usr/local/src
-
- scp  -r kubernetes_k8s_my_install root@192.168.224.184:/usr/local/src
-
- scp  -r kubernetes_k8s_my_install root@192.168.224.185:/usr/local/src
-
-  
-.
- 
-.
-
-  
 .
 
 
 
-5、Master01上，将本地电脑的kubernetes-server-linux-amd64.tar.gz上传
+4、Master01上，将本地电脑的kubernetes-server-linux-amd64.tar.gz上传
 
  cd /usr/local/src
 
@@ -109,8 +85,9 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.184:/usr/k8s
 scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s/bin/
 
   
-.
- 
+. Master01 和 Node1 安装lrzsz
+
+yum -y install lrzsz
 .
 
   
@@ -119,7 +96,7 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
 
 
 
-6、Master01上，将本地电脑的  etcd-v3.3.9-linux-amd64.tar.gz 上传
+5、Master01上，将本地电脑的  etcd-v3.3.9-linux-amd64.tar.gz 上传
 
  cd /usr/local/src
 
@@ -148,7 +125,7 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
 
 
 
-7、Master01上，将本地电脑的 cfssl_linux-amd64  cfssl-certinfo_linux-amd64  cfssljson_linux-amd64 上传
+6、Master01上，将本地电脑的 cfssl_linux-amd64  cfssl-certinfo_linux-amd64  cfssljson_linux-amd64 上传
 
 
  chmod +x cfssl_linux-amd64
@@ -188,7 +165,7 @@ scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.185:/usr/k8s
 
 
 
-8、Node01上，将本地电脑的flannel-v0.10.0-linux-amd64.tar.gz上传到
+7、Node01上，将本地电脑的flannel-v0.10.0-linux-amd64.tar.gz上传到
 
  cd /usr/local/src && mkdir flannel
 
@@ -212,7 +189,7 @@ scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.185:/usr/k8s
 
 
 
-9其他：
+8其他：
 
 
 8.7、验证 master 节点
