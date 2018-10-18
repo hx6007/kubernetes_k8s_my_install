@@ -37,6 +37,19 @@ iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 2380 -j ACCEPT
 service iptables save
 
 
+修改主机名，服务器各自执行
+
+hostnamectl --static set-hostname Master01
+
+hostnamectl --static set-hostname Master02
+
+hostnamectl --static set-hostname Node01
+
+hostnamectl --static set-hostname Node02
+
+hostnamectl --static set-hostname Node03
+
+
 二、设定集群环境变量
 
 后面的部署将会使用到的全局变量，定义如下（根据自己的机器、网络修改），将上面变量保存为: env.sh，然后将脚本拷贝到所有机器的/usr/k8s/bin目录。
