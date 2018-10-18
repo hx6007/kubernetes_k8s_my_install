@@ -30,11 +30,7 @@
    ssh-copy-id -i id_rsa.pub root@192.168.224.185
    
   
-. 
-.
 
-  
-.
 
 
 
@@ -51,14 +47,15 @@
 
  mkdir /data/k8s/kubedns -pv
   
-.
- 
+
+
+
 
  Master01 和 Node1 安装lrzsz
 
 yum -y install lrzsz
 
-.
+
 
 4、Master01上，将本地电脑的kubernetes-server-linux-amd64.tar.gz上传
 
@@ -90,11 +87,6 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
 
   
 
-.
-
-  
-.
-
 
 
 
@@ -117,7 +109,7 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
  scp etcd-v3.3.9-linux-amd64/etcd* root@192.168.224.185:/usr/k8s/bin/
 
   
-  
+  cd cd /usr/local/src/Sofe
   
   
  chmod +x cfssl_linux-amd64
@@ -131,13 +123,6 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
  chmod +x cfssl-certinfo_linux-amd64
  
  sudo mv cfssl-certinfo_linux-amd64 /usr/k8s/bin/cfssl-certinfo
-.
- 
-.
-
-  
-.
-
 
 
 
@@ -164,18 +149,6 @@ scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.183:/usr/k8s
 scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.184:/usr/k8s/bin/
 
 scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.185:/usr/k8s/bin/
-
-
-  
-.
-
-  
-.
- 
-.
-
-  
-.
 
 
 
