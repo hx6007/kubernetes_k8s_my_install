@@ -55,10 +55,15 @@ ssh-copy-id -i id_rsa.pub root@192.168.224.135
 
 
 mkdir -pv /etc/kubernetes/ssl/
+
 mkdir -pv /usr/k8s/bin/
+
 mkdir -pv ~/.kube/
+
 mkdir -pv /etc/flanneld/ssl
+
 mkdir /data/k8s/kubedns -pv
+
 cd /usr/local/src
 
 
@@ -74,9 +79,13 @@ cd k8s-1.97-install
 
 
 cp * /usr/k8s/bin/
+
 scp -rv  * root@192.168.224.132:/usr/k8s/bin/
+
 scp -rv  * root@192.168.224.133:/usr/k8s/bin/
+
 scp -rv  * root@192.168.224.134:/usr/k8s/bin/
+
 scp -rv  * root@192.168.224.135:/usr/k8s/bin/
 
 
