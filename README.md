@@ -1,4 +1,107 @@
 
+1、主机命名
+
+hostnamectl --static set-hostname Master01
+
+hostnamectl --static set-hostname Master02
+
+hostnamectl --static set-hostname Node01
+
+hostnamectl --static set-hostname Node02
+
+hostnamectl --static set-hostname Node03
+
+
+
+
+2、在Master01上必须要和其他服务器ssh互连
+
+mkdir .ssh
+
+cd /root/.ssh/
+
+ssh-keygen -t rsa
+
+ssh-copy-id -i id_rsa.pub root@192.168.224.132
+
+ssh-copy-id -i id_rsa.pub root@192.168.224.133
+
+ssh-copy-id -i id_rsa.pub root@192.168.224.134
+
+ssh-copy-id -i id_rsa.pub root@192.168.224.135
+
+
+
+
+3、在Node1上建立与其他服务器的ssh互连
+
+cd /root/.ssh/
+
+ssh-keygen -t rsa
+
+ssh-copy-id -i id_rsa.pub root@192.168.224.131
+
+ssh-copy-id -i id_rsa.pub root@192.168.224.132
+
+ssh-copy-id -i id_rsa.pub root@192.168.224.134
+
+ssh-copy-id -i id_rsa.pub root@192.168.224.135
+
+
+
+
+3、所有都创建目录
+
+
+
+mkdir -pv /etc/kubernetes/ssl/
+mkdir -pv /usr/k8s/bin/
+mkdir -pv ~/.kube/
+mkdir -pv /etc/flanneld/ssl
+mkdir /data/k8s/kubedns -pv
+cd /usr/local/src
+
+
+上传软件
+
+k8s-1.97-install.tar.gz
+
+解压
+
+tar xvf k8s-1.97-install.tar.gz
+
+cd k8s-1.97-install
+
+
+cp * /usr/k8s/bin/
+scp -rv  * root@192.168.224.132:/usr/k8s/bin/
+scp -rv  * root@192.168.224.133:/usr/k8s/bin/
+scp -rv  * root@192.168.224.134:/usr/k8s/bin/
+scp -rv  * root@192.168.224.135:/usr/k8s/bin/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=============================================================================
+
+
+
+
+
+
+
 
 1、在Master01上必须要和其他服务器ssh互连
 
