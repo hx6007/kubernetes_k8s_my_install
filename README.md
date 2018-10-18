@@ -117,6 +117,15 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
  scp etcd-v3.3.9-linux-amd64/etcd* root@192.168.224.185:/usr/k8s/bin/
 
   
+  
+  
+  
+ chmod +x cfssl_linux-amd64
+ sudo mv cfssl_linux-amd64 /usr/k8s/bin/cfssl
+ chmod +x cfssljson_linux-amd64
+ sudo mv cfssljson_linux-amd64 /usr/k8s/bin/cfssljson
+ chmod +x cfssl-certinfo_linux-amd64
+ sudo mv cfssl-certinfo_linux-amd64 /usr/k8s/bin/cfssl-certinfo
 .
  
 .
