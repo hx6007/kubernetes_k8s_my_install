@@ -15,6 +15,12 @@
    ssh-copy-id -i id_rsa.pub root@192.168.224.185
    
 .
+.
+.
+.
+.
+
+
 
 
 2、在Node1上建立与其他服务器的ssh互连
@@ -29,7 +35,12 @@
 
    ssh-copy-id -i id_rsa.pub root@192.168.224.185
    
-  
+  .
+.
+.
+.
+.
+
 
 
 
@@ -47,6 +58,11 @@
 
  mkdir /data/k8s/kubedns -pv
   
+.
+.
+.
+.
+.
 
 
 
@@ -86,6 +102,11 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.184:/usr/k8s
 scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s/bin/
 
   
+.
+.
+.
+.
+.
 
 
 
@@ -108,7 +129,12 @@ scp -rv kubernetes/server/bin/{kube-proxy,kubelet} root@192.168.224.185:/usr/k8s
 
  scp etcd-v3.3.9-linux-amd64/etcd* root@192.168.224.185:/usr/k8s/bin/
 
-  
+  .
+.
+.
+.
+.
+
 
 
 6、Master01上，将本地电脑的 cfssl_linux-amd64  cfssl-certinfo_linux-amd64  cfssljson_linux-amd64 上传
@@ -136,6 +162,11 @@ scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.184:/usr/k8s
 scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.185:/usr/k8s/bin/
 
 
+.
+.
+.
+.
+.
 
 
 
@@ -155,6 +186,11 @@ scp  /usr/k8s/bin/{cfssl,cfssljson,cfssl-certinfo} root@192.168.224.185:/usr/k8s
  scp flannel/{flanneld,mk-docker-opts.sh} root@192.168.224.185:/usr/k8s/bin
 
   
+.
+.
+.
+.
+.
 .
 
   
