@@ -2,6 +2,8 @@
 
 1、在Master01上必须要和其他服务器ssh互连
 
+   mkdir .ssh
+   
    cd /root/.ssh/
 
    ssh-copy-id -i id_rsa.pub root@192.168.224.182
