@@ -182,8 +182,6 @@ quay.io/coreos/flannel                     v0.10.0-amd64       f0fad859c909     
 
 
 
-kubectl apply -f kube-flannel.yml
-
 注意： 另外需要注意的是如果你的节点有多个网卡的话，需要在 kube-flannel.yml 中使用--iface参数指定集群主机内网网卡的名称，否则可能会出现 dns 无法解析。flanneld 启动参数加上--iface=<iface-name>
 
 在yaml文件中添加
@@ -193,6 +191,9 @@ args:
 - --iface=eth0
 
 
+创建
+
+kubectl apply -f kube-flannel.yml
 
 
 查看状态
